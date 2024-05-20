@@ -2,8 +2,8 @@ import "./style.css";
 import { useEffect, useState } from "react";
 import { tenureData } from "./utils/constants";
 import { numberWithCommas } from "./utils/config";
-import TextInput from "./components/TextInput";
-import SliderInput from "./components/SliderInput";
+import TextInput from "./components/text-input";
+import SliderInput from "./components/slider-input";
 
 export default function App() {
   const [cost, setCost] = useState(0);
@@ -43,6 +43,8 @@ export default function App() {
 
     const emi = calculateEMI(downPayment);
     setEmi(emi);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [tenure, cost]);
 
   const updateEMI = (e) => {
